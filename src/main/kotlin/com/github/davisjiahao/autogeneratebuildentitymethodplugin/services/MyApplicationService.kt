@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.davisjiahao.autogeneratebuildentitymethodplugin.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.davisjiahao.autogeneratebuildentitymethodplugin.MyBundle
 
 class MyApplicationService {
 
