@@ -13,6 +13,16 @@ plugins {
     id("org.jetbrains.changelog") version "1.3.1"
     // Gradle Qodana Plugin
     id("org.jetbrains.qodana") version "0.1.13"
+
+}
+
+
+dependencies {
+    implementation("com.google.guava:guava:31.0.1-jre")
+    implementation("com.squareup:javapoet:1.13.0")
+    implementation("io.vavr:vavr:0.10.4")
+    implementation("org.apache.commons:commons-lang3:3.12.0")
+    implementation("org.apache.commons:commons-lang3:3.12.0")
 }
 
 group = properties("pluginGroup")
