@@ -85,7 +85,7 @@ public class CloneFieldMethodBuildUtil {
                 if (result.containsKey(createMethodParam.getName())) {
                     continue;
                 }
-                result.put(createMethodParam.getName(), new SetParam(true, createMethodParam.getName(), createMethodParam.getName()));
+                result.put(createMethodParam.getName().toLowerCase(), new SetParam(true, createMethodParam.getName(), createMethodParam.getName()));
             } else {
                 List<PsiClass> psiClassLinkListParam = getPsiClassLinkList(psiClassParam);
                 Pattern getM = Pattern.compile(GET_REGEX);
