@@ -13,6 +13,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
 import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.psi.codeStyle.JavaCodeStyleManager;
+import com.intellij.psi.impl.source.PsiJavaFileImpl;
 import com.intellij.psi.util.PsiUtil;
 import com.intellij.util.IncorrectOperationException;
 import com.squareup.javapoet.MethodSpec;
@@ -101,6 +102,9 @@ public class CreateCloneFieldMethodAction extends PsiElementBaseIntentionAction 
     List<CreateMethodParam> params = CloneFieldMethodBuildUtil.getExpectedParameters(parent);
 
     PsiClass targetClass = doCollectRequests(parent.getMethodExpression());
+    if (targetClass == null) {
+      targetClass = ((PsiJavaFileImpl) element.getContainingFile()).getClasses()[0];
+    }
 
     ExpectedTypeInfo[] expectedTypeInfos = CreateFromUsageUtils.guessExpectedTypes(parent.getMethodExpression(),
             parent.getMethodExpression().getParent() instanceof PsiStatement);
