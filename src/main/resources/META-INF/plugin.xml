@@ -9,6 +9,17 @@
     <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <intentionAction>
+            <!-- add "<language>JAVA</language>" when targeting 2022.3 and later only -->
+            <className>com.github.davisjiahao.plugin.action.CreateCloneFieldMethodAction</className>
+            <category>Create method</category>
+        </intentionAction>
+
+        <intentionAction>
+            <!-- add "<language>JAVA</language>" when targeting 2022.3 and later only -->
+            <className>com.github.davisjiahao.plugin.action.CreateCloneFieldMatchMethodAction</className>
+            <category>Create method</category>
+        </intentionAction>
 
     </extensions>
 
