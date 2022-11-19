@@ -66,8 +66,8 @@ public class CloneFieldMethodBuildUtil {
             }
             code.append("newEntity.").
                     append(paramMtdMapTarget.get(param)).append("(").
-                    append(null == getMethodMap.get(param) ? "" : getMethodMap.get(param).getParamName() + "." + getMethodMap.get(param).getMethodName()).
-                    append(null == getMethodMap.get(param) || getMethodMap.get(param).isInNotComplex() ? "" : "()").
+                    append(null == getMethodMap.get(param) ? "" : getMethodMap.get(param).getParamName()).
+                    append(null == getMethodMap.get(param) || getMethodMap.get(param).isInNotComplex() ? "" : "." + getMethodMap.get(param).getMethodName() + "()").
                     append(");\n");
         }
         code.append("return newEntity;");
